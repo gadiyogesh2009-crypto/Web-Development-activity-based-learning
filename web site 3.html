@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga and Meditation</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f6f8f2;color:#344438;line-height:1.6}
+header{background:#355e48;color:white;padding:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+header h1{margin:0;color:#d9f99d}
+nav a{color:white;text-decoration:none;margin:10px}
+.hero{background:#dcebd8;text-align:center;padding:65px 20px}
+.hero h2{font-size:36px;color:#355e48}
+button{background:#527b5d;color:white;padding:12px 20px;border:0;border-radius:7px;cursor:pointer}
+button:hover{background:#355e48}
+.container{max-width:1100px;margin:auto;padding:25px}
+h2{color:#355e48}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 3px 10px #ddd;transition:.3s}
+.card:hover{transform:translateY(-4px)}
+.picture{height:145px;background:#e7f0df;display:flex;justify-content:center;align-items:center;font-size:65px;border-radius:8px}
+table{width:100%;border-collapse:collapse;background:white}
+th,td{padding:13px;border:1px solid #ddd;text-align:center}
+th{background:#527b5d;color:white}
+form{background:white;padding:25px;border-radius:10px;max-width:600px;margin:auto}
+input,select{width:100%;padding:12px;margin:10px 0;border:1px solid #ccc;border-radius:6px}
+footer{background:#355e48;color:white;text-align:center;padding:20px;margin-top:25px}
+@media(max-width:600px){
+header{display:block}
+nav a{display:inline-block;margin:5px}
+.hero h2{font-size:28px}
+.container{padding:15px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Peaceful Yoga</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#yoga">Yoga</a>
+<a href="#meditation">Meditation</a>
+<a href="#classes">Classes</a>
+<a href="#membership">Membership</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h2>Find Your Inner Peace</h2>
+<p>Relax your mind, strengthen your body, and live a balanced life.</p>
+<a href="#join"><button>Join a Class</button></a>
+</section>
+
+<div class="container">
+<h2 id="yoga">Yoga Poses</h2>
+<div class="cards">
+<div class="card">
+<div class="picture">🧘</div>
+<h3>Mountain Pose</h3>
+<p>Improves posture and body awareness.</p>
+</div>
+<div class="card">
+<div class="picture">🌳</div>
+<h3>Tree Pose</h3>
+<p>Helps improve balance and concentration.</p>
+</div>
+<div class="card">
+<div class="picture">☀️</div>
+<h3>Sun Salutation</h3>
+<p>A sequence of poses to warm up the body.</p>
+</div>
+</div>
+
+<h2 id="meditation">Meditation Techniques</h2>
+<div class="cards">
+<div class="card">
+<h3>🌬️ Breathing Meditation</h3>
+<p>Focus on slow, comfortable breathing to relax.</p>
+<button onclick="startMeditation()">Start Breathing</button>
+<p id="breathMessage"></p>
+</div>
+<div class="card">
+<h3>🧠 Mindfulness</h3>
+<p>Observe your thoughts and surroundings without judgment.</p>
+</div>
+<div class="card">
+<h3>🌿 Guided Relaxation</h3>
+<p>Relax your body and release daily stress.</p>
+</div>
+</div>
+
+<h2>Our Instructors</h2>
+<div class="cards">
+<div class="card">
+<div class="picture">🧘‍♀️</div>
+<h3>Ananya Sharma</h3>
+<p>Yoga Instructor</p>
+<p>Guides beginners through basic yoga poses.</p>
+</div>
+<div class="card">
+<div class="picture">🧘‍♂️</div>
+<h3>Arjun Kumar</h3>
+<p>Meditation Instructor</p>
+<p>Teaches breathing and mindfulness techniques.</p>
+</div>
+<div class="card">
+<div class="picture">🌼</div>
+<h3>Meera Reddy</h3>
+<p>Wellness Coach</p>
+<p>Helps students develop healthy routines.</p>
+</div>
+</div>
+
+<h2 id="classes">Class Schedule</h2>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Class</th><th>Time</th><th>Days</th></tr>
+<tr><td>Beginner Yoga</td><td>6:00 AM</td><td>Mon, Wed, Fri</td></tr>
+<tr><td>Meditation</td><td>8:00 AM</td><td>Tue, Thu, Sat</td></tr>
+<tr><td>Evening Yoga</td><td>5:30 PM</td><td>Mon-Sat</td></tr>
+</table>
+</div>
+
+<h2 id="membership">Membership Plans</h2>
+<div class="cards">
+<div class="card">
+<h3>Basic</h3>
+<h2>₹499/month</h2>
+<p>Weekly yoga sessions</p>
+<p>Beginner classes</p>
+<button onclick="selectPlan('Basic')">Choose Plan</button>
+</div>
+<div class="card">
+<h3>Standard</h3>
+<h2>₹999/month</h2>
+<p>Regular yoga sessions</p>
+<p>Meditation classes</p>
+<button onclick="selectPlan('Standard')">Choose Plan</button>
+</div>
+<div class="card">
+<h3>Premium</h3>
+<h2>₹1,499/month</h2>
+<p>All group classes</p>
+<p>Personal guidance</p>
+<button onclick="selectPlan('Premium')">Choose Plan</button>
+</div>
+</div>
+
+<h2>Wellness Articles</h2>
+<div class="cards">
+<div class="card">
+<h3>Benefits of Yoga</h3>
+<p>Regular yoga can support flexibility, balance, and physical well-being.</p>
+</div>
+<div class="card">
+<h3>Daily Meditation</h3>
+<p>A regular mindfulness practice may help manage everyday stress.</p>
+</div>
+<div class="card">
+<h3>Healthy Lifestyle</h3>
+<p>Combine physical activity, sufficient sleep, and balanced meals.</p>
+</div>
+</div>
+
+<h2 id="join">Class Registration</h2>
+<form onsubmit="register(event)">
+<label>Full Name</label>
+<input id="name" type="text" required placeholder="Enter your name">
+<label>Email Address</label>
+<input type="email" required placeholder="Enter your email">
+<label>Select Class</label>
+<select id="className">
+<option>Beginner Yoga</option>
+<option>Meditation</option>
+<option>Evening Yoga</option>
+</select>
+<label>Membership Plan</label>
+<select id="plan">
+<option>Basic</option>
+<option>Standard</option>
+<option>Premium</option>
+</select>
+<button type="submit">Register Now</button>
+<p id="message"></p>
+</form>
+</div>
+
+<footer>
+<h3>Peaceful Yoga</h3>
+<p>Breathe Deeply. Live Peacefully.</p>
+<p>© 2026 Peaceful Yoga and Meditation</p>
+</footer>
+
+<script>
+function selectPlan(plan){
+document.getElementById("plan").value=plan;
+document.getElementById("join").scrollIntoView({behavior:"smooth"});
+}
+
+function register(event){
+event.preventDefault();
+document.getElementById("message").textContent=
+"Thank you, "+document.getElementById("name").value+
+"! Your demo registration is complete.";
+}
+
+let timer;
+function startMeditation(){
+if(timer)return;
+let seconds=10;
+let message=document.getElementById("breathMessage");
+message.textContent="Breathe in gently... and breathe out. "+seconds;
+timer=setInterval(function(){
+seconds--;
+if(seconds<=0){
+clearInterval(timer);
+timer=null;
+message.textContent="Session complete. Take a moment to relax.";
+}else{
+message.textContent="Breathe slowly and relax. "+seconds+" seconds left.";
+}
+},1000);
+}
+</script>
+</body>
+</html>

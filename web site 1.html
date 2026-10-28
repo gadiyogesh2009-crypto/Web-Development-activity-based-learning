@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Fit Gym</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f4f4f4;color:#222}
+header{background:#111;color:white;padding:20px;display:flex;justify-content:space-between;flex-wrap:wrap}
+header h1{color:#f97316;margin:0}
+nav a{color:white;text-decoration:none;margin:10px}
+.hero{background:#292524;color:white;text-align:center;padding:70px 20px}
+.hero h2{font-size:40px;color:#fb923c}
+button{background:#f97316;color:white;border:0;padding:12px 20px;border-radius:5px;cursor:pointer}
+.container{padding:25px;max-width:1100px;margin:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:white;padding:20px;text-align:center;border-radius:10px;box-shadow:0 3px 10px #ddd;transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.card h3{color:#ea580c}
+table{width:100%;border-collapse:collapse;background:white}
+th,td{padding:13px;border:1px solid #ddd;text-align:center}
+th{background:#ea580c;color:white}
+form{background:white;padding:25px;border-radius:10px;max-width:600px;margin:auto}
+input,select{width:100%;padding:12px;margin:10px 0;border:1px solid #ccc;border-radius:5px}
+footer{background:#111;color:white;text-align:center;padding:20px}
+@media(max-width:600px){header{display:block}nav{margin-top:15px}nav a{display:inline-block;margin:5px}.hero h2{font-size:30px}}
+</style>
+</head>
+<body>
+<header>
+<h1>POWERFIT</h1>
+<nav>
+<a href="#programs">Programs</a>
+<a href="#trainers">Trainers</a>
+<a href="#plans">Plans</a>
+<a href="#schedule">Schedule</a>
+<a href="#join">Join Us</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>BUILD YOUR BEST SELF</h2>
+<p>Train hard, stay strong, and achieve your fitness goals.</p>
+<a href="#join"><button>Join Our Gym</button></a>
+</section>
+
+<div class="container">
+<h2 id="programs">Workout Programs</h2>
+<div class="cards">
+<div class="card"><h3>🏋️ Strength Training</h3><p>Build strength and muscle with guided exercises.</p></div>
+<div class="card"><h3>🏃 Cardio Training</h3><p>Improve stamina and heart health.</p></div>
+<div class="card"><h3>🤸 Personal Fitness</h3><p>Follow workouts designed for your goals.</p></div>
+</div>
+
+<h2>Our Facilities</h2>
+<div class="cards">
+<div class="card"><h3>Modern Equipment</h3><p>Weights, treadmills, and exercise machines.</p></div>
+<div class="card"><h3>Changing Rooms</h3><p>Clean and comfortable changing facilities.</p></div>
+<div class="card"><h3>Fitness Guidance</h3><p>Support from experienced trainers.</p></div>
+</div>
+
+<h2 id="trainers">Our Trainers</h2>
+<div class="cards">
+<div class="card"><h3>Arjun Kumar</h3><p>Strength Training Coach</p></div>
+<div class="card"><h3>Priya Sharma</h3><p>Fitness and Cardio Coach</p></div>
+<div class="card"><h3>Rahul Reddy</h3><p>Personal Trainer</p></div>
+</div>
+
+<h2 id="plans">Membership Plans</h2>
+<div class="cards">
+<div class="card"><h3>Basic</h3><h2>₹999/month</h2><p>Gym access</p><p>Basic equipment</p><button onclick="choosePlan('Basic')">Choose Plan</button></div>
+<div class="card"><h3>Standard</h3><h2>₹1,499/month</h2><p>Gym access</p><p>Group classes</p><button onclick="choosePlan('Standard')">Choose Plan</button></div>
+<div class="card"><h3>Premium</h3><h2>₹2,499/month</h2><p>All facilities</p><p>Personal guidance</p><button onclick="choosePlan('Premium')">Choose Plan</button></div>
+</div>
+
+<h2 id="schedule">Class Schedule</h2>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Class</th><th>Time</th><th>Days</th></tr>
+<tr><td>Strength Training</td><td>6:00 AM</td><td>Mon-Fri</td></tr>
+<tr><td>Cardio</td><td>8:00 AM</td><td>Mon-Sat</td></tr>
+<tr><td>Personal Fitness</td><td>5:00 PM</td><td>Mon-Fri</td></tr>
+</table>
+</div>
+
+<h2 id="join">Gym Registration</h2>
+<form onsubmit="register(event)">
+<label>Full Name</label>
+<input id="name" type="text" required placeholder="Enter your name">
+<label>Email</label>
+<input type="email" required placeholder="Enter your email">
+<label>Phone Number</label>
+<input type="tel" required placeholder="Enter your phone number">
+<label>Membership Plan</label>
+<select id="plan">
+<option>Basic</option>
+<option>Standard</option>
+<option>Premium</option>
+</select>
+<button type="submit">Register Now</button>
+<p id="message"></p>
+</form>
+</div>
+
+<footer><p>© 2026 PowerFit Gym | Stay Strong, Stay Healthy</p></footer>
+
+<script>
+function choosePlan(plan){
+document.getElementById("plan").value=plan;
+document.getElementById("join").scrollIntoView({behavior:"smooth"});
+}
+function register(event){
+event.preventDefault();
+document.getElementById("message").textContent=
+"Thank you, "+document.getElementById("name").value+
+"! Your demo registration is complete.";
+}
+</script>
+</body>
+</html>
